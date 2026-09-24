@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/style.css">
 <script src="/assets/site.js" defer></script>
-<script src="/assets/watch.js" defer></script>
+<script src="/assets/watch.js"></script>
 </head>
 <body class="watch-body">
 <a class="skip" href="#main">Skip to content</a>
@@ -89,6 +89,14 @@
 
     <section class="board-wrap" id="w-game" aria-label="Live scoreboard" hidden>
       <div class="board" id="w-board" data-status="inProgress">
+        <div class="bug" id="w-bug" data-status="inProgress" aria-hidden="true" hidden>
+          <div class="bug-row">
+            <span class="bug-team"><span class="bug-name" id="w-bug-our-name"></span><span class="bug-score" id="w-bug-our-score">0</span></span>
+            <span class="bug-team bug-team-opp"><span class="bug-score" id="w-bug-opp-score">0</span><span class="bug-name" id="w-bug-opp-name"></span></span>
+            <span class="bug-time" id="w-bug-time"><span class="bug-period" id="w-bug-period"></span><span class="bug-clock" id="w-bug-clock"></span></span>
+          </div>
+          <div class="bug-ticker" id="w-bug-ticker" hidden><span class="bug-last" id="w-bug-last"></span></div>
+        </div>
         <div class="board-top">
           <span class="badge" id="w-badge" data-status="inProgress">Live</span>
           <span class="board-period" id="w-period"></span>
@@ -104,8 +112,69 @@
             <span class="board-score" id="w-opp-score">0</span>
           </div>
         </div>
+        <p class="potg" id="w-potg" hidden><span class="potg-star" aria-hidden="true">&#9733;</span> Player of the Game <b id="w-potg-num"></b></p>
         <p class="board-updated" id="w-updated">Waiting for the first update.</p>
+        <div class="celebrate" id="w-celebrate" data-side="us" aria-hidden="true" hidden>
+          <div class="celebrate-bits" id="w-celebrate-bits"></div>
+          <div class="celebrate-card"><span class="celebrate-word" id="w-celebrate-word"></span><span class="celebrate-team" id="w-celebrate-team"></span></div>
+        </div>
       </div>
+      <p class="sr-only" id="w-announce" role="status" aria-live="assertive"></p>
+
+      <div class="board-actions">
+        <button class="btn btn-primary" type="button" id="w-share"><svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="w-share-label">Share the score</span></button>
+        <button class="btn btn-ghost" type="button" id="w-sound" aria-pressed="false"><svg class="btn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path class="snd-waves" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span id="w-sound-label">Sound off</span></button>
+        <p class="fine share-note" id="w-share-note" role="status" aria-live="polite"></p>
+      </div>
+      <p class="fine share-fine">The image is made on your phone or computer and shows the teams and the score. It never includes the game code or a player's name. Sound plays a chime on each score while this page is open.</p>
+
+      <section class="insight" id="w-insight" aria-label="Win chance and season notes" hidden>
+        <div class="wp" id="w-wp" hidden>
+          <h2 class="pbp-head">Win chance</h2>
+          <p class="wp-line" id="w-wp-line"></p>
+          <div class="wp-bar" id="w-wp-bar" role="img"><span class="wp-us" id="w-wp-us"></span></div>
+          <div class="wp-names"><span id="w-wp-us-name"></span><span id="w-wp-them-name"></span></div>
+          <svg class="wp-trail" id="w-wp-trail" viewBox="0 0 640 80" preserveAspectRatio="none" aria-hidden="true" hidden></svg>
+          <p class="fine wp-foot">An estimate from the score, the time left and this season&#8217;s results. Not a prediction of any player.</p>
+        </div>
+        <div class="notes-wrap" id="w-notes-wrap" hidden>
+          <h2 class="pbp-head">This season</h2>
+          <ul class="season-notes" id="w-notes"></ul>
+        </div>
+      </section>
+
+      <section class="final-card" id="w-final" aria-labelledby="w-final-title" hidden>
+        <div class="final-top">
+          <h2 id="w-final-title">Final</h2>
+          <p class="final-result" id="w-final-result"></p>
+        </div>
+        <div class="final-score">
+          <span class="final-team" id="w-final-our-name"></span><span class="final-num" id="w-final-our-score">0</span>
+          <span class="final-dash" aria-hidden="true">&#8211;</span>
+          <span class="final-num" id="w-final-opp-score">0</span><span class="final-team" id="w-final-opp-name"></span>
+        </div>
+        <div class="final-table-wrap" id="w-final-table-wrap">
+          <table class="final-table" id="w-final-table" aria-label="Score by period"></table>
+        </div>
+        <p class="potg final-potg" id="w-final-potg" hidden><span class="potg-star" aria-hidden="true">&#9733;</span> Player of the Game <b id="w-final-potg-num"></b></p>
+        <div id="w-final-plays-wrap">
+          <h3 class="pbp-head">Scoring plays</h3>
+          <ol class="final-plays" id="w-final-plays"></ol>
+        </div>
+      </section>
+
+      <section class="momentum" id="w-momentum" aria-labelledby="w-momentum-head" hidden>
+        <h2 class="pbp-head" id="w-momentum-head">Momentum</h2>
+        <ul class="momentum-lines" id="w-momentum-lines"></ul>
+        <figure class="flow" id="w-flow-wrap" hidden>
+          <svg id="w-flow" viewBox="0 0 640 170" preserveAspectRatio="none" role="img" aria-label="Score through the game"></svg>
+          <div class="flow-axis"><span id="w-flow-start">Start</span><span id="w-flow-end">Now</span></div>
+          <figcaption class="flow-key">
+            <span class="key key-us"><i aria-hidden="true"></i><span id="w-flow-us"></span></span>
+            <span class="key key-them"><i aria-hidden="true"></i><span id="w-flow-them"></span></span>
+          </figcaption>
+        </figure>
+      </section>
 
       <h2 class="pbp-head">Play-by-play</h2>
       <ul class="pbp" id="w-plays" aria-live="polite"></ul>

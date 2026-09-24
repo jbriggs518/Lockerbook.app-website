@@ -304,6 +304,138 @@ h2 + .cards, h2 + .faq { margin-top: 28px; }
 .board[data-status="final"] .board-clock { color: var(--muted); }
 .board-updated { margin: 16px 0 0; color: var(--muted); font-size: 14px; text-align: center; }
 
+/* Score bug (D-055): broadcast-style strip, shown only when the coach turned the overlay on.
+   Hard-coded black/white on purpose, like the app's ScoreboardBugView. */
+.bug[hidden], .bug [hidden], .bug-stage[hidden] { display: none !important; }
+.bug { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin: 0 0 18px; max-width: 100%;
+  font-family: var(--display); color: #fff; }
+.bug-row { display: flex; align-items: stretch; max-width: 100%; background: rgba(0, 0, 0, .86); border-radius: 8px;
+  overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, .35); }
+.bug-team { display: inline-flex; align-items: center; gap: 10px; padding: 7px 12px; min-width: 0; }
+.bug-team-opp { border-left: 1px solid rgba(255, 255, 255, .3); }
+.bug-name { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 14em; }
+.bug-score { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+.bug-time { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-width: 72px;
+  padding: 4px 12px; background: #14804c; color: #fff; line-height: 1.15; }
+.bug-period { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+.bug-clock { font-size: 16px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.bug[data-status="final"] .bug-time { background: #3a4458; }
+.bug-ticker { max-width: 100%; background: rgba(0, 0, 0, .72); border-radius: 5px; padding: 3px 9px; overflow: hidden; }
+.bug-last { display: block; font-family: var(--body); font-size: 13px; font-weight: 700; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; }
+.bug-ticker.bug-new .bug-last { animation: bug-slide .45s ease-out; }
+@keyframes bug-slide { from { transform: translateY(100%); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .bug-ticker.bug-new .bug-last { animation: none; } }
+@media (max-width: 520px) {
+  .bug-name { max-width: 7em; font-size: 13px; }
+  .bug-team { padding: 6px 9px; gap: 7px; }
+  .bug-score { font-size: 19px; }
+}
+
+/* Overlay mode (/watch/?g=CODE&overlay=1): a transparent Browser Source for OBS, vMix or Wirecast,
+   laid out for 1920x1080. Only the bug's stage is drawn; everything else on the page is hidden. */
+html.lb-overlay, html.lb-overlay body { background: transparent !important; }
+html.lb-overlay body { overflow: hidden; }
+html.lb-overlay body > :not(.bug-stage) { display: none !important; }
+.bug-stage { position: fixed; left: 64px; bottom: 64px; max-width: calc(100vw - 128px); }
+.bug-stage .bug { margin: 0; gap: 8px; }
+.bug-stage .bug-team { padding: 12px 20px; gap: 16px; }
+.bug-stage .bug-name { font-size: 26px; max-width: 16em; }
+.bug-stage .bug-score { font-size: 40px; }
+.bug-stage .bug-time { min-width: 120px; padding: 6px 18px; }
+.bug-stage .bug-period { font-size: 18px; }
+.bug-stage .bug-clock { font-size: 28px; }
+.bug-stage .bug-ticker { padding: 6px 14px; border-radius: 6px; }
+.bug-stage .bug-last { font-size: 22px; max-width: 60vw; }
+
+/* D-056 — celebrations, Player of the Game, share + sound, final card, momentum + chart */
+.board { position: relative; }
+.potg { margin: 14px 0 0; text-align: center; color: var(--text); font-weight: 650; font-size: 15px; }
+.potg b { color: var(--gold); font-family: var(--display); font-size: 18px; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.potg-star { color: var(--gold); }
+.celebrate { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; overflow: hidden;
+  border-radius: inherit; }
+.celebrate[hidden] { display: none; }
+.celebrate-card { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 14px 28px; border-radius: 16px;
+  background: rgba(7, 13, 25, .88); box-shadow: 0 0 0 2px var(--green), 0 18px 60px rgba(0, 0, 0, .5); }
+.celebrate[data-side="opponent"] .celebrate-card { box-shadow: 0 0 0 2px var(--line), 0 18px 60px rgba(0, 0, 0, .5); }
+.celebrate-word { font-family: var(--display); font-weight: 900; font-size: clamp(38px, 9vw, 76px); line-height: 1; letter-spacing: -0.02em;
+  color: var(--green); text-shadow: 0 2px 24px rgba(34, 179, 108, .45); }
+.celebrate[data-side="opponent"] .celebrate-word { color: var(--text); text-shadow: none; }
+.celebrate-team { color: var(--muted); font-weight: 700; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; }
+.celebrate.go .celebrate-card { animation: cheer-pop 2.4s cubic-bezier(.2, .9, .3, 1.2) both; }
+.celebrate-bits { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
+.celebrate-bits .bit { position: absolute; width: 9px; height: 14px; border-radius: 2px; background: var(--green); opacity: 0;
+  animation: cheer-bit 1.3s ease-out var(--delay, 0ms) both; }
+.celebrate-bits .bit-1 { background: var(--gold); }
+.celebrate-bits .bit-2 { background: var(--text); width: 7px; height: 7px; border-radius: 50%; }
+.celebrate[data-side="opponent"] .bit { background: var(--muted); }
+@keyframes cheer-pop { 0% { transform: scale(.4); opacity: 0; } 14% { transform: scale(1.08); opacity: 1; }
+  24% { transform: scale(1); } 82% { opacity: 1; } 100% { opacity: 0; transform: scale(.98); } }
+@keyframes cheer-bit { 0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); opacity: 0; } }
+/* Calm version for reduced motion: no burst, no movement, just the word, which fades out on its own. */
+.celebrate.calm .celebrate-bits { display: none; }
+.celebrate.calm.go .celebrate-card { animation: cheer-calm 3.2s linear both; }
+@keyframes cheer-calm { 0%, 88% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .celebrate.go .celebrate-card { animation: cheer-calm 3.2s linear both; }
+  .celebrate-bits { display: none; }
+}
+
+.board-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 16px 0 6px; }
+.board-actions .btn { padding: 10px 18px; font-size: 15px; border: 0; cursor: pointer; font-family: inherit; }
+.board-actions .btn-ghost { background: transparent; }
+/* The site-wide section padding is for marketing pages; the watch page stacks its sections tight. */
+.watch section.board-wrap, .watch section.momentum { padding-block: 0; }
+.btn-ico { width: 18px; height: 18px; flex: 0 0 auto; }
+#w-sound[aria-pressed="false"] .snd-waves { opacity: .25; }
+#w-sound[aria-pressed="true"] { box-shadow: inset 0 0 0 1.5px var(--green); color: var(--link); }
+.share-note { margin: 0; }
+.share-fine { margin: 0 0 22px; }
+
+.final-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px 20px;
+  margin: 8px 0 26px; border-top: 4px solid var(--green); }
+.final-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.final-top h2 { margin: 0; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.final-result { margin: 0; font-weight: 700; color: var(--text); }
+.final-score { display: flex; align-items: center; justify-content: center; gap: 10px 14px; flex-wrap: wrap; margin: 12px 0 16px; }
+.final-team { color: var(--muted); font-weight: 650; overflow-wrap: anywhere; }
+.final-num { font-family: var(--display); font-weight: 800; font-size: 46px; line-height: 1; font-variant-numeric: tabular-nums; }
+.final-dash { color: var(--line); font-size: 30px; font-weight: 800; }
+.final-table-wrap { overflow-x: auto; margin: 0 0 6px; }
+.final-table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 15px; }
+.final-table th, .final-table td { padding: 8px 10px; text-align: center; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.final-table thead th { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.final-table thead th:first-child { color: transparent; }
+.final-table tbody th { text-align: left; font-weight: 650; max-width: 14em; overflow: hidden; text-overflow: ellipsis; }
+.final-table tr[data-side="us"] th { box-shadow: inset 3px 0 0 var(--green); padding-left: 12px; }
+.final-table td.total { font-weight: 800; color: var(--text); }
+.final-table tbody tr:last-child th, .final-table tbody tr:last-child td { border-bottom: 0; }
+.final-potg { text-align: left; margin: 12px 0 4px; }
+.final-plays { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.final-plays li { display: grid; grid-template-columns: 116px 1fr auto; gap: 4px 12px; align-items: baseline; padding: 8px 10px;
+  border-radius: 10px; background: var(--bg-2); border-left: 3px solid var(--line); }
+.final-plays li[data-side="us"] { border-left-color: var(--green); }
+.final-running { font-weight: 800; font-variant-numeric: tabular-nums; color: var(--text); }
+
+.momentum { margin: 0 0 26px; }
+.momentum-lines { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.momentum-lines li { background: var(--green-soft); color: var(--text); border: 1px solid rgba(34, 179, 108, .35);
+  border-radius: 999px; padding: 6px 14px; font-weight: 650; font-size: 15px; }
+.flow { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 14px 10px; }
+.flow svg { display: block; width: 100%; height: 150px; overflow: visible; }
+.flow path { fill: none; stroke-width: 3; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.flow .flow-us { stroke: var(--green); }
+.flow .flow-them { stroke: #8fb4ff; stroke-dasharray: 7 5; }
+.flow .flow-base { stroke: var(--line); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.flow .flow-period { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+.flow-axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 6px; }
+.flow-key { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 8px; font-size: 14px; color: var(--text); }
+.key { display: inline-flex; align-items: center; gap: 8px; }
+.key i { display: inline-block; width: 22px; height: 0; border-top: 3px solid var(--green); }
+.key-them i { border-top: 3px dashed #8fb4ff; }
+
 /* Play-by-play */
 .pbp-head { font-family: var(--display); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
   margin: 30px 0 10px; }
@@ -342,4 +474,25 @@ h2 + .cards, h2 + .faq { margin-top: 28px; }
   .play { grid-template-columns: 1fr; gap: 4px; }
   .play-who { justify-self: start; }
   .code-form .btn { flex: 1 1 100%; }
+  .final-plays li { grid-template-columns: 1fr auto; }
+  .final-plays .play-when { grid-column: 1 / -1; }
+  .final-num { font-size: 38px; }
 }
+
+/* D-057 — win chance + season notes */
+.insight { margin: 0 0 26px; }
+.watch section.insight { padding-block: 0; }
+.wp { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px 12px; margin-bottom: 14px; }
+.wp .pbp-head { margin-top: 0; }
+.wp-line { margin: 0 0 10px; font-family: var(--display); font-weight: 750; font-size: 22px; color: var(--text); font-variant-numeric: tabular-nums; }
+.wp-bar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: #8fb4ff55; }
+.wp-us { display: block; height: 100%; background: var(--green); border-radius: 999px 0 0 999px; transition: width .6s ease; }
+.wp-names { display: flex; justify-content: space-between; gap: 12px; margin-top: 6px; color: var(--muted); font-size: 13px; }
+.wp-trail { display: block; width: 100%; height: 64px; margin-top: 10px; overflow: visible; }
+.wp-trail .wp-path { fill: none; stroke: var(--green); stroke-width: 2.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.wp-trail .wp-mid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; }
+.wp-foot { margin: 8px 0 0; font-size: 13px; }
+.season-notes { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.season-notes li { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 10px;
+  padding: 10px 12px; color: var(--text); font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .wp-us { transition: none; } }
