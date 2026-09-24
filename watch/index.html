@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Watch live · Lockerbook</title>
+<meta name="description" content="Follow a Lockerbook game live. Enter the share code your coach gave you to see the score, clock and play-by-play. Jersey numbers and stats only, no sign-in, no tracking.">
+<meta name="theme-color" content="#070d19">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Watch live · Lockerbook">
+<meta property="og:description" content="Follow a Lockerbook game live. Enter the share code your coach gave you to see the score, clock and play-by-play. Jersey numbers and stats only, no sign-in, no tracking.">
+<meta property="og:image" content="https://lockerbook.app/assets/icon-512.png">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/site.js" defer></script>
+<script src="/assets/watch.js" defer></script>
+</head>
+<body class="watch-body">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="/assets/favicon-32.png" alt="" width="28" height="28"><span>Lockerbook</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="nav" aria-label="Main"><a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#privacy">Privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/help/">Help</a><a href="/watch/" aria-current="page">Watch</a><a class="nav-cta" href="mailto:contact@lockerbook.app?subject=Lockerbook%20beta">Join the beta</a></nav>
+  </div>
+</header>
+<main id="main">
+
+<script type="application/json" id="live-config">{
+  "container": "iCloud.app.lockerbook.lockerbook",
+  "environment": "production",
+  "apiToken": "0b2528fb2b1daa57783e593878b0cb34a59a402cdffa98475128019d35831c7b"
+}</script>
+<div class="watch" id="watch">
+  <div class="wrap">
+
+    <div class="watch-head">
+      <div>
+        <p class="eyebrow">Live</p>
+        <h1>Watch this game live</h1>
+        <p class="lede">Your coach or scorekeeper turns on live sharing in Lockerbook and reads out a share code. Type it in and the score, clock, period and play-by-play update here on their own.</p>
+      </div>
+      <p class="conn" id="w-conn" data-state="idle" role="status" aria-live="polite">
+        <span class="conn-dot" aria-hidden="true"></span><span id="w-conn-text">Not connected</span>
+      </p>
+    </div>
+
+    <noscript>
+      <div class="notice notice-off">
+        <h2>This page needs JavaScript.</h2>
+        <p>The live scoreboard updates itself in your browser, so it needs JavaScript switched on. Nothing else is loaded: no fonts, analytics or trackers, and no third-party scripts of any kind.</p>
+      </div>
+    </noscript>
+
+    <div class="notice notice-off" id="w-offline" hidden>
+      <h2>Live view isn't switched on yet.</h2>
+      <p>Lockerbook's public live view is being set up. Once it's on, a share code from the app will bring up the scoreboard on this page — and until then there's nothing here to watch. Coaches: everything else in the app, including scoring, box scores and exports, works as usual.</p>
+      <p>Questions? Email <a href="mailto:contact@lockerbook.app?subject=Live%20view">contact@lockerbook.app</a>.</p>
+    </div>
+
+    <div id="w-intro">
+      <form class="code-form" id="w-form" action="/watch/" method="get">
+        <label class="sr-only" for="w-code">Share code</label>
+        <input id="w-code" name="g" type="text" value="" placeholder="HAWK-4821" maxlength="24"
+               autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false"
+               enterkeyhint="go" aria-describedby="w-code-help">
+        <button class="btn btn-primary" type="submit">Watch</button>
+      </form>
+      <p class="fine code-help" id="w-code-help">Codes look like <code>HAWK-4821</code>. Capitals and dashes don't matter — we tidy them up. A link such as <code>lockerbook.app/watch/?g=HAWK-4821</code> opens the game straight away.</p>
+
+      <div class="watch-steps">
+        <article class="card"><span class="step-n">01</span><h3>The coach shares</h3><p>In Lockerbook, the scorekeeper opens the game and switches on live sharing. The app shows a share code.</p></article>
+        <article class="card"><span class="step-n">02</span><h3>You type the code</h3><p>Enter it above, or open the link the coach sends. Nothing to install, no account, no sign-in.</p></article>
+        <article class="card"><span class="step-n">03</span><h3>Follow the game</h3><p>The score, clock, period and play-by-play refresh every few seconds until the game is final.</p></article>
+      </div>
+
+      <div class="notice" style="margin-top:26px">
+        <h2>Jersey numbers only.</h2>
+        <p>This page shows the score, the clock and plays by jersey number. It never shows athlete names or contact information, for either team, and it never shows anything about an opposing athlete beyond a jersey number. There are no ads, analytics or trackers here, and no third-party scripts, fonts or images — the only thing this page remembers is the last code you typed, kept in your own browser. <a href="/privacy/">Read the privacy policy</a>.</p>
+      </div>
+    </div>
+
+    <div class="notice" id="w-notice" role="status" aria-live="polite" hidden>
+      <h2 id="w-notice-title"></h2>
+      <p id="w-notice-body"></p>
+      <button class="btn btn-ghost" type="button" id="w-again">Try again</button>
+    </div>
+
+    <section class="board-wrap" id="w-game" aria-label="Live scoreboard" hidden>
+      <div class="board" id="w-board" data-status="inProgress">
+        <div class="board-top">
+          <span class="badge" id="w-badge" data-status="inProgress">Live</span>
+          <span class="board-period" id="w-period"></span>
+        </div>
+        <div class="board-grid" aria-live="polite">
+          <div class="board-side">
+            <span class="board-team" id="w-our-name">&nbsp;</span>
+            <span class="board-score" id="w-our-score">0</span>
+          </div>
+          <div class="board-clock" id="w-clock">&#8212;</div>
+          <div class="board-side">
+            <span class="board-team" id="w-opp-name">&nbsp;</span>
+            <span class="board-score" id="w-opp-score">0</span>
+          </div>
+        </div>
+        <p class="board-updated" id="w-updated">Waiting for the first update.</p>
+      </div>
+
+      <h2 class="pbp-head">Play-by-play</h2>
+      <ul class="pbp" id="w-plays" aria-live="polite"></ul>
+      <p class="pbp-empty" id="w-plays-empty">No plays yet.</p>
+      <p class="fine board-note">Jersey numbers and stats only. Lockerbook never publishes athlete names.</p>
+    </section>
+
+    <p class="more"><a href="/watch/" id="w-change" hidden>&#8592; Watch a different game</a></p>
+
+  </div>
+</div>
+
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="/"><img src="/assets/favicon-32.png" alt="" width="28" height="28"><span>Lockerbook</span></a>
+      <p class="muted">The scorebook for every sport. School, college, club &amp; travel.</p>
+    </div>
+    <nav aria-label="App">
+      <h2>App</h2>
+      <a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#pricing">Pricing</a>
+    </nav>
+    <nav aria-label="Help">
+      <h2>Help</h2>
+      <a href="/help/">User guide</a><a href="/watch/">Watch a game live</a><a href="/support/">Support</a><a href="mailto:contact@lockerbook.app?subject=Lockerbook%20bug%20report">Report a bug</a><a href="/press/">Press</a>
+    </nav>
+    <nav aria-label="Legal">
+      <h2>Legal</h2>
+      <a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a><a href="mailto:contact@lockerbook.app">contact@lockerbook.app</a>
+    </nav>
+  </div>
+  <div class="wrap fineprint">
+    <span>© 2026 Vermonster's Pro Shop</span>
+    <span>MaxPreps is a trademark of its owner. Lockerbook is not affiliated with or endorsed by MaxPreps. iPhone and iPad are trademarks of Apple Inc.</span>
+  </div>
+</footer>
+</body>
+</html>

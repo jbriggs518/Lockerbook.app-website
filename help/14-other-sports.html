@@ -21,7 +21,7 @@
   <div class="wrap bar">
     <a class="brand" href="/"><img src="/assets/favicon-32.png" alt="" width="28" height="28"><span>Lockerbook</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="nav" aria-label="Main"><a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#privacy">Privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/help/" aria-current="page">Help</a><a class="nav-cta" href="mailto:contact@lockerbook.app?subject=Lockerbook%20beta">Join the beta</a></nav>
+    <nav id="site-nav" class="nav" aria-label="Main"><a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#privacy">Privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/help/" aria-current="page">Help</a><a href="/watch/">Watch</a><a class="nav-cta" href="mailto:contact@lockerbook.app?subject=Lockerbook%20beta">Join the beta</a></nav>
   </div>
 </header>
 <main id="main">
@@ -30,9 +30,39 @@
 <blockquote>
 <p><strong>Preview:</strong> baseball, softball, basketball, football, volleyball, lacrosse, ice hockey, field hockey, wrestling, tennis, and bowling are in preview. They work for real games, and we're adding sport-specific screens based on your feedback. Email contact@lockerbook.app. Track &amp; field, cross country, and swimming &amp; diving are coming soon.</p>
 </blockquote>
+<h2 id="baseball-and-softball-the-inning-header">Baseball and softball: the inning header</h2>
+<p>At the top of the pad you get <strong>Top</strong> or <strong>Bottom</strong> of the inning, the outs in that half, the
+score, and a line score with runs, hits (<strong>H</strong>) and errors (<strong>E</strong>), visitors on top. Tap <strong>Out</strong> as
+outs happen; after three the header switches to the bottom half of the same inning, and after six it
+tells you the inning is over. <strong>Undo out</strong> takes one back. It's a marker for you — Lockerbook never
+ends an inning on its own, and the count never goes to MaxPreps. Tap <strong>Next Inning</strong> when you're
+ready. Tied after regulation? Keep going: extra innings are allowed until someone wins. If the home
+team leads after the top of the last inning, the header says so and you can tap <strong>Final</strong>.</p>
+<ul>
+<li><strong>Grand Slam</strong> is instead of Home Run, not as well: tap one or the other.</li>
+<li><strong>Pitches</strong> and <strong>Outs Pitched</strong> add to what the pitcher already has, and the entry shows
+  "So far this game" so you can check the running total.</li>
+<li>Win, Loss, Save, Start, Complete Game and Shutout can be given to a pitcher once per game.</li>
+</ul>
+<p>Baseball, softball and football have more buttons than fit on one screen, so the pad groups them
+(Batting, Running, Pitching, Fielding, Catching) and you switch groups with the picker above the
+buttons. It stays where you left it.</p>
+<h2 id="one-tap-both-players">One tap, both players</h2>
+<p>Some plays belong to two (or three) players. Lockerbook asks for the second one as part of the same
+play, and <strong>Undo</strong> takes back the whole play:</p>
+<ul>
+<li><strong>Football:</strong> after <strong>Pass Complete</strong> and the yards, pick who caught it — the catch gets the same
+  yards, so passing and receiving always match. After <strong>Receiving TD</strong>, pick who threw it for the
+  passing touchdown.</li>
+<li><strong>Basketball:</strong> a made shot asks who assisted (or <strong>No assist</strong>).</li>
+<li><strong>Hockey:</strong> a goal asks for up to two assists. <strong>Field hockey:</strong> one assist.</li>
+<li><strong>Volleyball:</strong> <strong>Block Assist</strong> asks for the other blocker (and a third, if there was one). It's
+  one point, and each blocker gets a block assist.</li>
+</ul>
+<p>Tap <strong>Not sure</strong> or <strong>No assist</strong> to skip the second player.</p>
 <h2 id="before-the-game">Before the game</h2>
 <ol>
-<li>Open your team → tap the game under <strong>Upcoming</strong> (or <strong>Add Games → Start a Game Now</strong>).</li>
+<li>Open your team → tap the game under <strong>Upcoming</strong> (or <strong>Start a Game</strong>).</li>
 <li>Pick the <strong>starting lineup</strong> (or batting order, wrestlers, or bowlers). In hockey, lacrosse, and field hockey, swipe right on your goalie and tap <strong>Set G</strong>.</li>
 <li>Check the format: quarters, periods, innings, sets, or games, and whether there's a clock. Then tap <strong>Ready</strong>.</li>
 </ol>
@@ -43,12 +73,19 @@
 <li>Some stats ask for a number:</li>
 <li><strong>Football:</strong> yards for rushes, completions, receptions, and punts. Tap <strong>Loss</strong> for negative yards.</li>
 <li><strong>Bowling:</strong> pins for a game.</li>
-<li><strong>Lacrosse and hockey:</strong> penalty minutes.</li>
-<li><strong>Baseball and softball:</strong> outs pitched (3 per inning).</li>
+<li><strong>Boys' lacrosse:</strong> penalty time — tap <strong>0:30</strong>, <strong>1:00</strong>, <strong>1:30</strong>… (the number is in seconds).</li>
+<li><strong>Hockey:</strong> penalty minutes — tap <strong>2</strong>, <strong>4</strong>, <strong>5</strong> or <strong>10</strong>. Use <strong>Bench minor</strong> when no player is charged.</li>
+<li><strong>Baseball and softball:</strong> outs pitched (3 per inning) and pitches.</li>
+<li>A number that can't be right (a 301 bowling game, 700 seconds of penalty) is refused, so a typo
+    doesn't change the stats.</li>
 <li>Buttons that score show their points (+1, +2, +3, +6). The score updates automatically.</li>
 <li><strong>Opponent</strong> buttons record the other team's points. In hockey, lacrosse, and field hockey, an opponent goal counts against your goalie in net, and <strong>Shot Saved by Our Goalie</strong> counts as a save.</li>
-<li><strong>Volleyball:</strong> kills, aces, and solo blocks score for you. Errors (attack, service, block, reception, ball-handling) give the point to the opponent and are charged to your player. The scoreboard shows <strong>sets won</strong>, and the match ends when a team wins enough sets.</li>
-<li><strong>Undo</strong> removes the last thing you entered. Long-press any play to delete it.</li>
+<li><strong>Volleyball:</strong> kills, aces, and solo blocks score for you. Errors (attack, service, block, reception, ball-handling) give the point to the opponent and are charged to your player. The header shows the set, the points it's played to (25, or 15 in a deciding set, win by 2) and says when the set is won. <strong>End Set</strong> asks first if the set isn't won yet, and a tied set can't end. The scoreboard shows <strong>sets won</strong>.</li>
+<li><strong>Basketball:</strong> the header shows team fouls this quarter for both teams, <strong>BONUS</strong> from the fifth foul of a quarter (the seventh of a half), and any player with four or more fouls. <strong>Technical Foul</strong> can go to <strong>Bench / coach</strong>.</li>
+<li><strong>Lacrosse:</strong> boys' teams see faceoffs and timed penalties; girls' teams see draw controls and green, yellow and red cards. Girls' teams start with 2 × 25-minute halves and 12 players (change the team's format if your state plays quarters).</li>
+<li><strong>Hockey, lacrosse, and field hockey:</strong> saves come only from the opponent's <strong>Shot Saved by Our Goalie</strong>, so nothing is counted twice. If you pull the goalie, pick <strong>Empty net</strong> when changing goalies.</li>
+<li><strong>The clock</strong> stops at 0:00 in every sport except soccer, even if you forget to pause it, so goalie minutes stay right. Football overtime has no clock.</li>
+<li><strong>Undo</strong> removes the last thing you entered (the whole play, if it had a second player). Long-press any play to delete it.</li>
 </ul>
 <h2 id="what-each-sport-tracks">What each sport tracks</h2>
 <table>
@@ -77,15 +114,15 @@
 </tr>
 <tr>
 <td>Lacrosse</td>
-<td>Goal, Assist, Shot Saved, Shot Missed · Ground Ball, Caused Turnover, Turnover, Faceoff Won/Lost, Draw Control · Penalty (minutes) · Save</td>
+<td>Goal, Assist, Shot Saved, Shot Missed · Ground Ball, Caused Turnover, Turnover · Boys: Faceoff Won/Lost, Penalty (time) · Girls: Draw Control, Green/Yellow/Red Card · Opponent: Shot Saved by Our Goalie</td>
 </tr>
 <tr>
 <td>Ice Hockey</td>
-<td>Goal, Assist, Shot on Goal, Power-Play Goal, Short-Handed Goal · Faceoffs, Hits, Blocked Shots · Penalty (minutes) · Save</td>
+<td>Goal, Assist, Shot on Goal, Power-Play Goal, Short-Handed Goal · Faceoffs, Hits, Blocked Shots · Penalty (minutes) · Opponent: Shot Saved by Our Goalie</td>
 </tr>
 <tr>
 <td>Field Hockey</td>
-<td>Goal, Assist, Shot Saved, Shot Missed · Penalty Corner, Defensive Save · Green/Yellow/Red Card · Save</td>
+<td>Goal, Assist, Shot Saved, Shot Missed · Penalty Corner, Defensive Save · Green/Yellow/Red Card · Opponent: Shot Saved by Our Goalkeeper</td>
 </tr>
 <tr>
 <td>Wrestling</td>
@@ -97,15 +134,15 @@
 </tr>
 <tr>
 <td>Bowling</td>
-<td>Game Score (pins), Baker Frame Total · Strikes, Spares</td>
+<td>Game Score (pins, 0–300), Baker Game Score · Strikes, Spares</td>
 </tr>
 </tbody>
 </table>
 <h2 id="box-score-and-exports">Box score and exports</h2>
 <ul>
-<li><strong>Box Score</strong> shows the score by period and a table for each stat group, with team totals.</li>
+<li><strong>Box Score</strong> shows the score by period and a table for each stat group, with team totals and percentages (FG%, 3P%, FT%, hitting %, faceoff %, save % and goals against average). A <strong>Not sure</strong> row holds plays entered without a player, so the team line adds up. A dash means there's nothing to divide by yet.</li>
 <li><strong>Export</strong> gives you a printable box score sheet and a spreadsheet (CSV).</li>
-<li><strong>MaxPreps:</strong> for high school baseball, softball, basketball, football, volleyball, lacrosse, ice hockey, and field hockey, the MaxPreps stats file turns on as soon as each sport's field list is confirmed with MaxPreps. Until then, type the numbers from the entry sheet. See <a href="05-maxpreps.html">Sending stats to MaxPreps</a>.</li>
+<li><strong>MaxPreps:</strong> high school baseball, softball, basketball, football, volleyball, lacrosse, ice hockey, and field hockey all make the MaxPreps stats file, using MaxPreps' own stat list for your sport. Record the stats during the game and the file is ready when the game is final. See <a href="05-maxpreps.html">Sending stats to MaxPreps</a>.</li>
 </ul><nav class="pager" aria-label="Guide pages"><a href="13-editing-stats.html">← Fixing Stats After the Game (Head Coach)</a><a href="/help/">All topics</a><span></span></nav></div></div>
 </main>
 <footer class="footer">
@@ -120,7 +157,7 @@
     </nav>
     <nav aria-label="Help">
       <h2>Help</h2>
-      <a href="/help/">User guide</a><a href="/support/">Support</a><a href="mailto:contact@lockerbook.app?subject=Lockerbook%20bug%20report">Report a bug</a><a href="/press/">Press</a>
+      <a href="/help/">User guide</a><a href="/watch/">Watch a game live</a><a href="/support/">Support</a><a href="mailto:contact@lockerbook.app?subject=Lockerbook%20bug%20report">Report a bug</a><a href="/press/">Press</a>
     </nav>
     <nav aria-label="Legal">
       <h2>Legal</h2>

@@ -21,7 +21,7 @@
   <div class="wrap bar">
     <a class="brand" href="/"><img src="/assets/favicon-32.png" alt="" width="28" height="28"><span>Lockerbook</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="nav" aria-label="Main"><a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#privacy">Privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/help/" aria-current="page">Help</a><a class="nav-cta" href="mailto:contact@lockerbook.app?subject=Lockerbook%20beta">Join the beta</a></nav>
+    <nav id="site-nav" class="nav" aria-label="Main"><a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#privacy">Privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/help/" aria-current="page">Help</a><a href="/watch/">Watch</a><a class="nav-cta" href="mailto:contact@lockerbook.app?subject=Lockerbook%20beta">Join the beta</a></nav>
   </div>
 </header>
 <main id="main">
@@ -32,21 +32,34 @@
 <ol>
 <li>Open your team and tap the game under <strong>Upcoming</strong>.</li>
 <li><strong>Starting lineup:</strong> tap each starter. <strong>Swipe right</strong> on your goalkeeper and tap <strong>Set GK</strong>.</li>
-<li>Check the format and <strong>Live view</strong> options (see <a href="06-live-view.html">Live view</a>), then tap <strong>Ready</strong>.</li>
+<li>Check the format, then tap <strong>Ready</strong>. Want family and friends to follow along? Turn on the
+   <strong>live link</strong> (game → ••• → <strong>Live View Sharing</strong>) and share the code — see
+   <a href="06-live-view.html">Live view for families and fans</a>.</li>
 </ol>
 <p><strong>A game that isn't on your schedule:</strong></p>
 <ol>
-<li>Open your team → <strong>Add Games</strong> → <strong>Start a Game Now</strong>.</li>
+<li>Open your team and tap <strong>Start a Game</strong>.</li>
 <li>Enter the opponent, date/time, Home/Away/Neutral, and (optionally) the field.</li>
-<li>Pick the lineup and live view options, then tap <strong>Ready</strong>.</li>
+<li>Pick the lineup, then tap <strong>Ready</strong>.</li>
 </ol>
 <p>You can change the lineup until the first half starts. Tap <strong>Edit Lineup</strong> on the game screen.</p>
 <h2 id="the-scoring-screen">The scoring screen</h2>
 <ul>
-<li><strong>Scoreboard</strong> at the top: score, period, and clock. Tap it to adjust the clock.</li>
-<li><strong>Start 1st Half</strong> starts the clock. Use <strong>Pause/Resume</strong> for stoppages if your clock stops, and <strong>End 1st Half</strong> at the whistle.</li>
+<li><strong>Scoreboard</strong> at the top: score, period, and clock. Tap it to adjust the clock. <strong>PAUSED</strong> shows
+  next to the clock whenever it's stopped.</li>
+<li><strong>Start 1st Half</strong> starts the clock.</li>
+<li>Under the scoreboard while a half is on: <strong>Injury</strong> (see <strong>Injuries</strong> below) and <strong>End 1st Half</strong>.
+  If there's still time on the clock, End asks <strong>End the 1st Half at 2:14?</strong> first, so a stray tap
+  doesn't end the half. At 0:00 (or later, in stoppage time) it ends in one tap.</li>
 <li>Two button pads: your team and the opponent.</li>
+<li><strong>The bar at the bottom</strong> stays put while you scroll, so you can reach it with your thumb:</li>
+<li><strong>Pause / Resume</strong> on the left, for stoppages if your clock stops.</li>
+<li>In the middle, the last play you recorded and its time, so you can check it without scrolling
+    to the play-by-play.</li>
+<li><strong>Undo</strong> on the right (the same as <strong>Undo</strong> at the top of the screen).</li>
 </ul>
+<p>Your phone gives a light tap when a play is recorded, a stronger buzz when one is taken away, and a
+click when the clock starts or stops.</p>
 <h3 id="your-teams-buttons">Your team's buttons</h3>
 <table>
 <thead>
@@ -61,7 +74,7 @@
 <td>Tap the scorer, then the assist (or <strong>No assist</strong>). Turn on <strong>Penalty kick</strong> first if it was a PK</td>
 </tr>
 <tr>
-<td><strong>Shot Saved</strong></td>
+<td><strong>On Target</strong></td>
 <td>Shot on goal that their keeper saved. Pick the shooter</td>
 </tr>
 <tr>
@@ -98,24 +111,62 @@
 </tr>
 </tbody>
 </table>
+<p><strong>Subs, several at once.</strong> Tap <strong>Sub</strong> and you get one screen with both benches. Tap everyone
+coming off, tap everyone going on, then tap <strong>Sub 3</strong> (or however many). Tap a player again to take
+them back off the list. <strong>Undo</strong> takes back the whole change at once — one sub, two, or three —
+and the bar at the bottom says what it took back ("3 subs: #14 for #4, …"). Tap <strong>Redo</strong> to put
+them all back. If your goalkeeper is one of the players coming off, the screen tells you who ends up in
+goal — a keeper going on is matched to the keeper coming off — and you can set someone else with
+<strong>Change GK</strong>.</p>
 <h3 id="opponent-buttons">Opponent buttons</h3>
-<p>One tap each: <strong>Goal</strong>, <strong>Save by GK</strong> (your keeper saved it), <strong>Shot Off Target</strong>, <strong>Shot Blocked</strong>, <strong>Corner</strong>, <strong>Foul</strong>, <strong>Offside</strong>, <strong>Yellow</strong>, <strong>Red</strong>, and <strong>Own Goal (ours)</strong> (pick your player if you know who).</p>
+<p>One tap each, most common first: <strong>Our GK Save</strong> (your keeper saved their shot), <strong>Goal</strong>, <strong>Shot Off Target</strong>, <strong>Corner</strong>, <strong>Foul</strong>, <strong>PK Goal</strong>, <strong>PK Saved</strong>, <strong>Shot Blocked</strong>, <strong>Offside</strong>, <strong>Yellow</strong>, <strong>Red</strong>, and <strong>Own Goal (ours)</strong> (pick your player if you know who).</p>
+<p><strong>On Target</strong> (your pad) and <strong>Our GK Save</strong> (their pad) are the two "save" buttons. <strong>On Target</strong>
+is your shot that their keeper stopped; <strong>Our GK Save</strong> is their shot that your keeper stopped.</p>
+<p><strong>Penalties against.</strong> Use <strong>PK Goal</strong> when the other team scores from the spot and <strong>PK Saved</strong> when your keeper stops one. Both are marked as penalty kicks for you, so the box score shows the keeper's penalties faced and penalties saved without any extra tapping. (Your own penalties are a <strong>Penalty kick</strong> switch on the goal or shot sheet.) If you tap plain <strong>Goal</strong> by mistake, the head coach can flip <strong>Penalty kick</strong> on afterward in <strong>Edit Stats</strong>.</p>
 <h3 id="tracking-the-other-teams-players-optional">Tracking the other team's players (optional)</h3>
 <p>Turn on <strong>Track Opposing Team Stats</strong> in your team's settings (open your team → <strong>Edit Team</strong> → <strong>Scoring</strong>).</p>
 <p>When it's on:</p>
 <ul>
-<li><strong>Goal</strong> asks <strong>Who scored?</strong> Type the jersey number and tap <strong>Next</strong>, then type the assist number and tap <strong>Save</strong>. Tap <strong>No assist</strong> if there wasn't one, or <strong>Number not sure</strong> if you didn't see it. The minute comes from the game clock.</li>
-<li><strong>Save by GK</strong>, <strong>Shot Off Target</strong>, <strong>Shot Blocked</strong>, <strong>Foul</strong>, <strong>Offside</strong>, <strong>Yellow</strong>, and <strong>Red</strong> ask for one number (or <strong>Number not sure</strong>).</li>
+<li><strong>Goal</strong> asks <strong>Who scored?</strong> Type the jersey number (the number pad opens by itself when there's no roster to tap) and tap <strong>Next</strong>, then type the assist number and tap <strong>Save</strong>. Tap <strong>No assist</strong> if there wasn't one, or <strong>Number not sure</strong> if you didn't see it. The minute comes from the game clock.</li>
+<li><strong>Our GK Save</strong>, <strong>Shot Off Target</strong>, <strong>Shot Blocked</strong>, <strong>Foul</strong>, <strong>Offside</strong>, <strong>Yellow</strong>, and <strong>Red</strong> ask for one number (or <strong>Number not sure</strong>).</li>
 <li>The play-by-play shows the numbers, like <em>GOAL – Sample Academy #10, assist #7</em>.</li>
 </ul>
 <p><strong>Opponent roster (optional).</strong> To score them exactly like your own team, add their roster before the game: in game setup tap <strong><Opponent> roster</strong>, or on the game screen tap ••• → <strong><Opponent> Roster</strong>. Add jersey numbers (names are optional), <strong>Paste</strong> cells copied from a spreadsheet, or <strong>Copy from last game</strong> against the same team. Their numbers then appear as buttons. Any number you type during the game that isn't on the list is added for you.</p>
 <p>Opponent names stay on your device for your staff. Families, the public link, and the broadcast overlay only ever see the other team's jersey numbers, and exports never include opponent names.</p>
 <h2 id="fixing-mistakes">Fixing mistakes</h2>
 <ul>
-<li><strong>Undo</strong> (top right) removes the last thing you entered — including a period start or end.</li>
-<li><strong>Long-press</strong> any line in the play-by-play → <strong>Delete</strong>.</li>
+<li><strong>Undo</strong> (in the bottom bar, or top right) removes the last thing you entered, including a period
+  start or end. For a few seconds the bar says what it took back, like <em>Undid: GOAL – J. Rivera</em>,
+  with a <strong>Redo</strong> button in case you tapped Undo by mistake. Redo puts back exactly the same play.
+  (A period start or end can be undone but not redone: tap <strong>Start</strong> or <strong>End</strong> again instead.)
+  Recording a new play clears the Redo.</li>
+<li><strong>Long-press</strong> any line in the play-by-play → <strong>Delete</strong>. Period start and end lines can't be
+  deleted this way; use <strong>Undo</strong> for those, because Undo also puts the clock and the period back.</li>
 <li>After the game, the head coach can tap <strong>Edit Stats</strong> to correct anything (see <a href="13-editing-stats.html">Fixing stats after the game</a>). <strong>Reopen</strong> is for games that aren't really over, and it also needs the head coach PIN.</li>
 </ul>
+<h2 id="halftime-who-starts-the-second-half">Halftime: who starts the second half?</h2>
+<p>Tap <strong>Start 2nd Half</strong> and, if you made any subs, Lockerbook asks who's taking the field:</p>
+<ul>
+<li><strong>Same as the start</strong> — your starting lineup, back out.</li>
+<li><strong>Whoever is on now</strong> — the eleven who finished the first half.</li>
+<li>Or tap players in the grid to pick them yourself.</li>
+</ul>
+<p>Pick the same number who finished the last period; if someone got a red card, they're not on the
+list and you play a player short, same as on the field. Anyone swapped in is recorded as a
+substitution at the start of the half, so minutes played come out right and <strong>Undo</strong> works
+normally. If your goalkeeper changes, the screen tells you who's in goal before you start.</p>
+<p>Didn't make any subs but want a different lineup anyway? Tap the <strong>Lineup</strong> button next to Start.</p>
+<h2 id="injuries">Injuries</h2>
+<p>Either bench can stop play. Tap <strong>Injury</strong> under the scoreboard, then pick <strong>Injury — <your team></strong>
+or <strong>Injury — <opponent></strong>. Lockerbook stops the clock, notes the stoppage in the play-by-play, and
+holds a message on screen until you tap <strong>Resume Game</strong>. The clock then picks up exactly where it
+left off — and if it was already stopped, it stays stopped.</p>
+<p>Picked the wrong thing? Tap <strong>Tapped by Mistake</strong> instead of Resume Game. The stoppage comes back out
+of the play-by-play and the clock carries on as if it had never stopped, because the referee never
+stopped it either.</p>
+<p>Lockerbook records only that play stopped and which side called for the trainer. It never asks who
+was hurt, and it never stores that. The stoppage is visible to your staff only: it is worth nothing
+in the box score, it isn't in your MaxPreps file, and families watching the live view don't see it.</p>
 <h2 id="clock-tips">Clock tips</h2>
 <ul>
 <li>The clock keeps running if you lock the phone or switch apps.</li>
@@ -125,7 +176,11 @@
 <h2 id="ending-the-game">Ending the game</h2>
 <ul>
 <li>End the last period. If the score is tied and your format has overtime, <strong>Start OT1</strong> appears.</li>
-<li>Tap <strong>Final</strong> and confirm.</li>
+<li>Tap <strong>Final</strong>. The confirmation shows the final score. Tap <strong>Mark Final</strong>, or, for a high school team that
+  hasn't turned MaxPreps off, <strong>Mark Final &amp; Get MaxPreps File</strong> to go straight to the file.</li>
+<li>Once the game is final, the top of the screen shows <strong>Get MaxPreps File</strong> and <strong>Box Score</strong> (for
+  high school teams, unless MaxPreps is turned off for your team), plus <strong>Edit Stats</strong> and <strong>Reopen</strong>. Both of those need the head coach
+  PIN. Everything is also in the ••• menu.</li>
 </ul><nav class="pager" aria-label="Guide pages"><a href="02-teams-and-rosters.html">← Teams and Rosters</a><a href="/help/">All topics</a><a href="04-box-score-and-stats.html">Box Score and Stats →</a></nav></div></div>
 </main>
 <footer class="footer">
@@ -140,7 +195,7 @@
     </nav>
     <nav aria-label="Help">
       <h2>Help</h2>
-      <a href="/help/">User guide</a><a href="/support/">Support</a><a href="mailto:contact@lockerbook.app?subject=Lockerbook%20bug%20report">Report a bug</a><a href="/press/">Press</a>
+      <a href="/help/">User guide</a><a href="/watch/">Watch a game live</a><a href="/support/">Support</a><a href="mailto:contact@lockerbook.app?subject=Lockerbook%20bug%20report">Report a bug</a><a href="/press/">Press</a>
     </nav>
     <nav aria-label="Legal">
       <h2>Legal</h2>

@@ -21,7 +21,7 @@
   <div class="wrap bar">
     <a class="brand" href="/"><img src="/assets/favicon-32.png" alt="" width="28" height="28"><span>Lockerbook</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="nav" aria-label="Main"><a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#privacy">Privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/help/">Help</a><a class="nav-cta" href="mailto:contact@lockerbook.app?subject=Lockerbook%20beta">Join the beta</a></nav>
+    <nav id="site-nav" class="nav" aria-label="Main"><a href="/#sports">Sports</a><a href="/#features">Features</a><a href="/#maxpreps">MaxPreps</a><a href="/#privacy">Privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/help/">Help</a><a href="/watch/">Watch</a><a class="nav-cta" href="mailto:contact@lockerbook.app?subject=Lockerbook%20beta">Join the beta</a></nav>
   </div>
 </header>
 <main id="main">
@@ -45,7 +45,7 @@
 <div class="m-board"><div><strong>2</strong><small>Harbor Point</small></div><em>–</em><div><strong>1</strong><small>Cedar Falls</small></div></div>
 <div class="m-clock">2nd Half · 21:48</div>
 <div class="m-label">Harbor Point</div>
-<div class="m-keys"><span class="k k-score">Goal</span><span class="k">Shot Saved</span><span class="k">Shot Off Target</span><span class="k">Corner</span><span class="k">Steal</span><span class="k">Foul</span><span class="k">Yellow</span><span class="k">Sub</span><span class="k">Change GK</span></div>
+<div class="m-keys"><span class="k k-score">Goal</span><span class="k">On Target</span><span class="k">Shot Off Target</span><span class="k">Corner</span><span class="k">Steal</span><span class="k">Foul</span><span class="k">Yellow</span><span class="k">Sub</span><span class="k">Change GK</span></div>
 <div class="m-label">Play-by-play</div>
 <ul class="m-log"><li><time>58:12</time>Shot: Hit Post/Bar – #7 S. Delacroix</li><li><time>56:30</time>Yellow card – Cedar Falls #5</li><li><time>44:30</time><b>GOAL – #10 L. Ferreira (PK)</b></li><li><time>22:15</time><b>GOAL – Cedar Falls #14, assist #8</b></li></ul></div></div></div>
   </div>
@@ -112,60 +112,24 @@
     <div class="tabs" role="tablist" aria-label="Features"><button role="tab" id="tab-score" aria-controls="panel-score" aria-selected="true" tabindex="0">Score</button><button role="tab" id="tab-sports" aria-controls="panel-sports" aria-selected="false" tabindex="-1">Every sport</button><button role="tab" id="tab-box" aria-controls="panel-box" aria-selected="false" tabindex="-1">Box score</button><button role="tab" id="tab-maxpreps" aria-controls="panel-maxpreps" aria-selected="false" tabindex="-1">MaxPreps</button><button role="tab" id="tab-team" aria-controls="panel-team" aria-selected="false" tabindex="-1">Schedule & roster</button></div>
 <div class="panel" role="tabpanel" id="panel-score" aria-labelledby="tab-score">
   <div class="panel-copy"><h3>Keep the book in two taps.</h3><ul class="ticks"><li>Big buttons for both teams, grouped the way coaches think</li><li>A clock that keeps running when the phone locks</li><li>Undo anytime, and long-press any play to delete it</li><li>Optional opponent jersey numbers for their scorers</li></ul></div>
-  <div class="panel-visual"><div class="phone" role="img" aria-label="Soccer scoring screen with scoreboard, buttons and play-by-play"><div class="screen">
-<div class="m-title">vs Cedar Falls</div>
-<div class="m-board"><div><strong>2</strong><small>Harbor Point</small></div><em>–</em><div><strong>1</strong><small>Cedar Falls</small></div></div>
-<div class="m-clock">2nd Half · 21:48</div>
-<div class="m-label">Harbor Point</div>
-<div class="m-keys"><span class="k k-score">Goal</span><span class="k">Shot Saved</span><span class="k">Shot Off Target</span><span class="k">Corner</span><span class="k">Steal</span><span class="k">Foul</span><span class="k">Yellow</span><span class="k">Sub</span><span class="k">Change GK</span></div>
-<div class="m-label">Play-by-play</div>
-<ul class="m-log"><li><time>58:12</time>Shot: Hit Post/Bar – #7 S. Delacroix</li><li><time>56:30</time>Yellow card – Cedar Falls #5</li><li><time>44:30</time><b>GOAL – #10 L. Ferreira (PK)</b></li><li><time>22:15</time><b>GOAL – Cedar Falls #14, assist #8</b></li></ul></div></div></div>
+  <div class="panel-visual"><div class="phone real"><img src="/assets/screens/scoring.png" alt="Keep the book in two taps." loading="lazy"></div></div>
 </div>
 <div class="panel" role="tabpanel" id="panel-sports" aria-labelledby="tab-sports" hidden>
   <div class="panel-copy"><h3>One scorebook for 15 sports.</h3><ul class="ticks"><li>Soccer&#x27;s complete pad plus a stat sheet for 11 more sports</li><li>Innings, quarters, periods, sets and meets, with or without a clock</li><li>Yards, pins and penalty minutes entered as numbers</li><li>Rally scoring and sets won for volleyball</li></ul></div>
-  <div class="panel-visual"><div class="phone" role="img" aria-label="Basketball stat sheet with shooting and hustle buttons"><div class="screen">
-<div class="m-title">vs Cedar Falls · Basketball</div>
-<div class="m-board"><div><strong>41</strong><small>Harbor Point</small></div><em>–</em><div><strong>36</strong><small>Cedar Falls</small></div></div>
-<div class="m-clock">Q3 · 3:50</div>
-<div class="m-label">Shooting</div><div class="m-keys"><span class="k k-score">2PT Made</span><span class="k">2PT Miss</span><span class="k k-score">3PT Made</span><span class="k">3PT Miss</span><span class="k k-score">FT Made</span><span class="k">FT Miss</span></div><div class="m-label">Hustle</div><div class="m-keys"><span class="k">Off. Rebound</span><span class="k">Def. Rebound</span><span class="k">Assist</span><span class="k">Steal</span><span class="k">Block</span><span class="k">Charge Taken</span></div>
-<div class="m-label">Cedar Falls</div>
-<div class="m-keys"><span class="k k-opp">+1 Free Throw</span><span class="k k-opp">+2 Basket</span><span class="k k-opp">+3 Basket</span></div></div></div></div>
+  <div class="panel-visual"><div class="phone real"><img src="/assets/screens/basketball.png" alt="One scorebook for 15 sports." loading="lazy"></div></div>
 </div>
 <div class="panel" role="tabpanel" id="panel-box" aria-labelledby="tab-box" hidden>
   <div class="panel-copy"><h3>A real box score, as you go.</h3><ul class="ticks"><li>Player, goalie and pitching tables with team totals</li><li>Score by period, and play-by-play for the whole game</li><li>Head coaches correct stats with a PIN, and every change is logged</li><li>Spreadsheet export for your staff</li></ul></div>
-  <div class="panel-visual"><div class="phone" role="img" aria-label="Box score with player and goalkeeper tables"><div class="screen">
-<div class="m-title">Box Score</div>
-<div class="m-board small"><div><strong>3</strong><small>Harbor Point</small></div><em>–</em><div><strong>1</strong><small>North Summit</small></div></div>
-<div class="m-label">Players</div>
-<table class="m-table"><thead><tr><th>#</th><th>Player</th><th>G</th><th>A</th><th>SH</th><th>SOG</th></tr></thead><tbody><tr><td>1</td><td>M. Lindqvist</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>7</td><td>S. Delacroix</td><td>1</td><td>1</td><td>3</td><td>2</td></tr><tr><td>9</td><td>E. Hollis</td><td>1</td><td>1</td><td>2</td><td>2</td></tr><tr><td>10</td><td>L. Ferreira</td><td>0</td><td>0</td><td>2</td><td>1</td></tr><tr><td>12</td><td>G. Tanaka</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>13</td><td>I. Morgan</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody></table>
-<div class="m-label">Goalkeepers</div>
-<table class="m-table"><thead><tr><th>#</th><th>Keeper</th><th>MIN</th><th>SV</th><th>GA</th><th>DEC</th></tr></thead>
-<tbody><tr><td>1</td><td>M. Lindqvist</td><td>45</td><td>1</td><td>0</td><td>W</td></tr><tr><td>00</td><td>T. Okafor</td><td>35</td><td>2</td><td>1</td><td>–</td></tr></tbody></table></div></div></div>
+  <div class="panel-visual"><div class="phone real"><img src="/assets/screens/boxscore.png" alt="A real box score, as you go." loading="lazy"></div></div>
 </div>
 <div class="panel" role="tabpanel" id="panel-maxpreps" aria-labelledby="tab-maxpreps" hidden>
   <div class="panel-copy"><h3>Stats ready for MaxPreps.</h3><ul class="ticks"><li>One question per team: do you post to MaxPreps?</li><li>A stats file in MaxPreps&#x27; import format after every game</li><li>Jersey numbers and stats only, never names</li><li>A printable entry sheet in MaxPreps&#x27; order</li></ul></div>
-  <div class="panel-visual"><div class="phone" role="img" aria-label="MaxPreps export screen with the stats file preview"><div class="screen">
-<div class="m-title">MaxPreps &amp; Export</div>
-<div class="m-mp"><span class="m-mp-mark mp-text">MaxPreps</span><b>Your stats, ready for MaxPreps</b><small>Share the file, then import it under the game's Enter Stats.</small></div>
-<div class="m-row">⬆︎ Share MaxPreps Stats File</div>
-<pre class="m-file">Jersey|Goals|Assists|Shots|ShotsOnGoal|…
-7|1|1|3|2|…
-9|1|1|2|2|…
-12|1|0|1|1|…</pre>
-<div class="m-note">Jersey numbers and stats only. No names.</div>
-<div class="m-row">⎙ Share / Print Entry Sheet</div>
-<div class="m-row">▦ Share Box Score (CSV)</div></div></div></div>
+  <div class="panel-visual"><div class="phone real"><img src="/assets/screens/export.png" alt="Stats ready for MaxPreps." loading="lazy"></div></div>
 </div>
 <div class="panel" role="tabpanel" id="panel-team" aria-labelledby="tab-team" hidden>
   <div class="panel-copy"><h3>Set up the season in minutes.</h3><ul class="ticks"><li>Import your roster from a spreadsheet or pasted cells</li><li>Subscribe to your school&#x27;s calendar link or import a CSV</li><li>Try a sample team before you enter your own</li><li>MaxPreps roster file for high school teams</li></ul></div>
-  <div class="panel-visual"><div class="phone" role="img" aria-label="Team screen with upcoming schedule and roster"><div class="screen">
-<div class="m-title">Harbor Point Herons</div>
-<div class="m-row m-accent">＋ Add Games · Import Schedule…</div>
-<div class="m-label">Upcoming</div>
-<ul class="m-list"><li><b>vs Ridgeview</b><small>Fri, Sep 18 · 6:00 PM · Home</small></li><li><b>at Pine Hollow</b><small>Tue, Sep 22 · 4:30 PM · Away</small></li><li><b>vs Westbrook</b><small>Fri, Sep 25 · Time TBA · Home</small></li></ul>
-<div class="m-label">Roster (18)</div>
-<ul class="m-list roster"><li><span class="num">#1</span><b>Maya Lindqvist</b><small>GK</small></li><li><span class="num">#2</span><b>Ava Moreno</b><small>CB · RB</small></li><li><span class="num">#7</span><b>Sofia Delacroix</b><small>RW · RM</small></li><li><span class="num">#9</span><b>Emma Hollis</b><small>ST</small></li><li><span class="num">#10</span><b>Lucia Ferreira</b><small>CAM · CF</small></li></ul></div></div></div>
-</div><p class="fine">Illustrations of the app with fictional teams.</p>
+  <div class="panel-visual"><div class="phone real"><img src="/assets/screens/team.png" alt="Set up the season in minutes." loading="lazy"></div></div>
+</div>
   </div>
 </section>
 
@@ -181,7 +145,7 @@
         <li><b>Share the file.</b> After the game, send the stats file to the computer you use for MaxPreps.</li>
         <li><b>Import and publish.</b> On MaxPreps, open the game, choose Enter Stats, and import the file.</li>
       </ol>
-      <p class="fine">Stats files contain jersey numbers and stats, never names. Soccer is ready now. Baseball, softball, basketball, football, volleyball, lacrosse, ice hockey and field hockey turn on as their field lists are confirmed with MaxPreps.</p>
+      <p class="fine">Stats files contain jersey numbers and stats, never names. Ready for soccer, baseball, softball, basketball, football, volleyball, lacrosse, ice hockey and field hockey.</p>
     </div>
     <div class="mp-card">
       <div class="mp-card-head"><span class="mp-mark mp-text">MaxPreps</span><span>Stats file</span></div>
@@ -191,6 +155,35 @@
 12|1|0|1|1
 1|0|0|0|0</pre>
       <p>One line per athlete, matched by jersey number.</p>
+    </div>
+  </div>
+</section>
+
+<section id="live" class="band">
+  <div class="wrap mp-grid">
+    <div>
+      <p class="eyebrow">For families</p>
+      <h2>Family in the stands, family at home.</h2>
+      <p class="lede">Switch on live sharing for a game and Lockerbook gives you a share code. Send it to anyone. They open <b>lockerbook.app/watch</b>, type the code, and follow the score, clock, period and play-by-play while you keep the book.</p>
+      <ul class="ticks">
+        <li>Nothing for fans to install, and no account or sign-in</li>
+        <li>Jersey numbers and stats only — never athlete names</li>
+        <li>Off until you switch it on; the code stops working when you switch it off</li>
+        <li>Reads well on a phone in a stand, a tablet or a laptop</li>
+      </ul>
+      <p class="more"><a href="/watch/">Open the live viewer →</a></p>
+    </div>
+    <div>
+      <div class="board" data-status="inProgress">
+  <div class="board-top"><span class="badge" data-status="inProgress">Live</span><span class="board-period">2nd Half</span></div>
+  <div class="board-grid">
+    <div class="board-side"><span class="board-team">Harbor Point</span><span class="board-score">2</span></div>
+    <div class="board-clock">21:48</div>
+    <div class="board-side"><span class="board-team">Cedar Falls</span><span class="board-score">1</span></div>
+  </div>
+  <p class="board-updated">Last updated just now.</p>
+</div>
+      <p class="fine">An illustration of the fan view, with a fictional team.</p>
     </div>
   </div>
 </section>
@@ -239,7 +232,7 @@
   <div class="wrap narrow">
     <p class="eyebrow">FAQ</p>
     <h2>Questions coaches ask.</h2>
-    <div class="faq"><details><summary>Which sports can I score?</summary><p>Fifteen. Soccer has the complete scoring screen. Baseball, softball, basketball, football, volleyball, lacrosse, ice hockey, field hockey, wrestling, tennis and bowling use the stat-sheet scorekeeper (preview). Track &amp; field, cross country and swimming &amp; diving are coming soon.</p></details><details><summary>Is it only for high schools?</summary><p>No. School (varsity, JV, freshman), college and club/travel teams all use Lockerbook, with game formats for each level. MaxPreps tools appear for high school teams, because MaxPreps covers U.S. high schools.</p></details><details><summary>How does the MaxPreps upload work?</summary><p>Answer “yes” when Lockerbook asks if your team posts to MaxPreps. After a game, Lockerbook makes the MaxPreps stats file. Open the game on MaxPreps, choose Enter Stats, and import the file. It has jersey numbers and stats, not names. MaxPreps doesn&#x27;t offer automatic syncing to partner apps, so this one upload is the fastest path.</p></details><details><summary>Which sports have a MaxPreps stats file?</summary><p>Soccer today. Baseball, softball, basketball, football, volleyball, lacrosse, ice hockey and field hockey turn on as each sport&#x27;s field list is confirmed with MaxPreps. Until then, Lockerbook gives you an entry sheet in MaxPreps&#x27; order.</p></details><details><summary>Do I need an account?</summary><p>No. There&#x27;s nothing to sign up for. Your teams, rosters and games live on your iPhone or iPad.</p></details><details><summary>What does Lockerbook know about my players?</summary><p>Only what a scorebook needs: name, jersey number, position and graduation year. It never asks for contact information, birthdays or photos, and it has no ad networks, trackers or analytics.</p></details><details><summary>Can two people keep stats at the same time?</summary><p>Not yet. One scorekeeper enters the game. Staff syncing and live viewing for families are next on the roadmap.</p></details><details><summary>Does it work without internet?</summary><p>Yes. Scoring, box scores and exports all work offline.</p></details><details><summary>What does it cost?</summary><p>Lockerbook is free during the beta. At launch we&#x27;ll offer one-sport, all-sports and school/club plans.</p></details><details><summary>Is there an Android version?</summary><p>Not right now. Lockerbook is built for iPhone and iPad.</p></details></div>
+    <div class="faq"><details><summary>Which sports can I score?</summary><p>Fifteen. Soccer has the complete scoring screen. Baseball, softball, basketball, football, volleyball, lacrosse, ice hockey, field hockey, wrestling, tennis and bowling use the stat-sheet scorekeeper (preview). Track &amp; field, cross country and swimming &amp; diving are coming soon.</p></details><details><summary>Is it only for high schools?</summary><p>No. School (varsity, JV, freshman), college and club/travel teams all use Lockerbook, with game formats for each level. MaxPreps tools appear for high school teams, because MaxPreps covers U.S. high schools.</p></details><details><summary>How does the MaxPreps upload work?</summary><p>Answer “yes” when Lockerbook asks if your team posts to MaxPreps. After a game, Lockerbook makes the MaxPreps stats file. Open the game on MaxPreps, choose Enter Stats, and import the file. It has jersey numbers and stats, not names. MaxPreps doesn&#x27;t offer automatic syncing to partner apps, so this one upload is the fastest path.</p></details><details><summary>Which sports have a MaxPreps stats file?</summary><p>Soccer, baseball, softball, basketball, football, volleyball, lacrosse, ice hockey and field hockey — every high school sport MaxPreps imports stats for, using MaxPreps&#x27; own stat list for each one. The other sports get a box score sheet and a spreadsheet.</p></details><details><summary>Do I need an account?</summary><p>No. There&#x27;s nothing to sign up for. Your teams, rosters and games live on your iPhone or iPad.</p></details><details><summary>What does Lockerbook know about my players?</summary><p>Only what a scorebook needs: name, jersey number, position and graduation year. It never asks for contact information, birthdays or photos, and it has no ad networks, trackers or analytics.</p></details><details><summary>Can families watch the game live?</summary><p>Yes. Turn on live sharing for a game and Lockerbook shows a share code such as HAWK-4821. Send the code to family and they open lockerbook.app/watch, type it in, and follow the score, clock, period and play-by-play while you keep the book. There is no app to install and no account to create. The public page shows jersey numbers and stats only — never athlete names, and nothing about an opposing athlete beyond a jersey number. Live sharing is off until you switch it on, and the code stops working the moment you switch it off.</p></details><details><summary>Can two people keep stats at the same time?</summary><p>Not yet. One scorekeeper enters the game; families can already follow along live. Scoring from several coaches&#x27; phones at once is next on the roadmap.</p></details><details><summary>Does it work without internet?</summary><p>Yes. Scoring, box scores and exports all work offline.</p></details><details><summary>What does it cost?</summary><p>Lockerbook is free during the beta. At launch we&#x27;ll offer one-sport, all-sports and school/club plans.</p></details><details><summary>Is there an Android version?</summary><p>Not right now. Lockerbook is built for iPhone and iPad.</p></details></div>
   </div>
 </section>
 
@@ -264,7 +257,7 @@
     </nav>
     <nav aria-label="Help">
       <h2>Help</h2>
-      <a href="/help/">User guide</a><a href="/support/">Support</a><a href="mailto:contact@lockerbook.app?subject=Lockerbook%20bug%20report">Report a bug</a><a href="/press/">Press</a>
+      <a href="/help/">User guide</a><a href="/watch/">Watch a game live</a><a href="/support/">Support</a><a href="mailto:contact@lockerbook.app?subject=Lockerbook%20bug%20report">Report a bug</a><a href="/press/">Press</a>
     </nav>
     <nav aria-label="Legal">
       <h2>Legal</h2>
