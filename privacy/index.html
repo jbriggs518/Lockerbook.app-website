@@ -32,7 +32,7 @@
 <ul>
 <li>Lockerbook keeps your team's information <strong>on your device</strong>. We don't run servers that hold it.</li>
 <li>We <strong>don't collect</strong> personal information through the app, and we have no analytics, ads, or tracking.</li>
-<li>If a coach turns on the <strong>live link</strong> for a game, the score, clock and scoring plays — with
+<li>If a coach turns on the <strong>live link</strong> for a game, the score, clock, scoring plays and cards — with
   <strong>jersey numbers only, never names</strong> — are published through Apple's iCloud so family and friends
   can follow the game. It's off unless the coach turns it on.</li>
 <li>Lockerbook never asks for athletes' contact information, birthdays, photos, health information, or location.</li>
@@ -41,7 +41,7 @@
 <p>Coaches and scorekeepers can enter:</p>
 <ul>
 <li>Team details: school or club name, mascot, level, and season</li>
-<li>Players: first and last name, jersey number, and optionally position, graduation year, and a MaxPreps athlete identifier</li>
+<li>Players: first and last name, jersey number, and optionally a nickname, position, graduation year, and a MaxPreps athlete identifier. A nickname is for staff only: it's shown on the scoring screens and never leaves the device — not in exports, the live link, or anything else the app shares</li>
 <li>Games: opponent, date, location, lineups, statistics, and staff notes</li>
 <li>Optionally, the other team's jersey numbers and player names, for staff use only</li>
 </ul>
@@ -59,8 +59,13 @@ public scoreboard, described below, which contains no personal information. Lock
 <li><strong>Files you export</strong>, such as the MaxPreps stats file (jersey numbers and statistics only, with no names), the printable entry sheet, the box score spreadsheet, or a roster file. You choose where they go through the iOS share sheet.</li>
 <li><strong>The live link</strong>, only for a game where a coach turns it on. While it's on, the app publishes a
   public scoreboard for that game to Lockerbook's public database in Apple's iCloud (CloudKit):
-  the team and opponent names as entered, the score, the clock and period, and the scoring plays
-  written with <strong>jersey numbers only</strong>. It never includes an athlete's name, nickname, position,
+  the team and opponent names as entered, the sport, the score, the clock and period, the score by
+  period, the scoring plays and cards written with <strong>jersey numbers only</strong>, the coach's Player of the
+  Game by <strong>jersey number only</strong> (if one is picked), and whether the scoreboard overlay is on. If the
+  coach turns on <strong>win chance and season notes</strong> for the team (off unless they do), it also includes
+  the team's estimated chance of winning, how that estimate moved during the game, and up to three
+  season notes built from team results only, such as "6–1 this season when leading at half" — never
+  about a player. It never includes an athlete's name, nickname, position,
   substitutions, injuries, notes or anything about the opposing players beyond jersey numbers.
   Names are removed on the coach's device before anything is sent. Anyone with the game's code can
   view it at lockerbook.app/watch without an account. The scoreboard is deleted when the coach turns
